@@ -19,6 +19,10 @@
             <header class="ig-header">
                 <div class="ig-logo">Nuestra Historia</div>
                 <div class="ig-header-icons">
+                    <!-- Botón de Pétalos/Magia -->
+                    <svg viewBox="0 0 24 24" class="ig-icon" id="toggle-particles" fill="none" stroke="currentColor" stroke-width="2" style="color: #e83e8c;">
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
                     <svg viewBox="0 0 24 24" class="ig-icon" fill="none" stroke="currentColor" stroke-width="2">
                         <path
                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
@@ -50,7 +54,79 @@
                 </div>
             </div>
 
+            <!-- Contador de Amor (2 años y 2 meses) -->
+            <div class="love-counter-container">
+                <div class="love-counter-title">Nuestro Amor Lleva ❤️</div>
+                <div class="love-counter-timer" id="love-timer">
+                    <div class="timer-segment">
+                        <span class="timer-num" id="timer-years">0</span>
+                        <span class="timer-label">Años</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-num" id="timer-months">0</span>
+                        <span class="timer-label">Meses</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-num" id="timer-days">0</span>
+                        <span class="timer-label">Días</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-num" id="timer-hours">0</span>
+                        <span class="timer-label">Hrs</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-num" id="timer-minutes">0</span>
+                        <span class="timer-label">Min</span>
+                    </div>
+                    <div class="timer-segment">
+                        <span class="timer-num" id="timer-seconds">0</span>
+                        <span class="timer-label">Seg</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="ig-feed">
+                <!-- Post 6: 2 Años y 2 Meses (MAYO 2026) -->
+                <article class="ig-post">
+                    <div class="ig-post-header">
+                        <div class="ig-post-avatar">💖</div>
+                        <div class="ig-post-user-info">
+                            <span class="ig-username">mi_amor_lindo</span>
+                            <span class="ig-location">En nuestro "para siempre" ✨</span>
+                        </div>
+                        <div class="ig-post-more"><svg viewBox="0 0 24 24" width="20" fill="currentColor">
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="19" cy="12" r="1.5" />
+                                <circle cx="5" cy="12" r="1.5" />
+                            </svg></div>
+                    </div>
+                    <a href="cartas/carta-2-anos-2-meses.html" class="carta-link special-ani">
+                        <div class="ig-post-image gradient-6">
+                            <h2 class="ig-post-title-overlay">¡Feliz 2 Años y 2 Meses! 💖</h2>
+                        </div>
+                    </a>
+                    <div class="ig-post-actions">
+                        <svg viewBox="0 0 24 24" class="ig-action-icon like-btn" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                        <svg viewBox="0 0 24 24" class="ig-action-icon" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="ig-post-likes">Les gusta a <strong>mi_princesita</strong> y a <strong>1,000,000 más</strong></div>
+                    <div class="ig-post-caption">
+                        <span class="ig-username">mi_amor_lindo</span> 25 de mayo de 2026. 2 años y 2 meses del amor más bonito de mi vida. Cada segundo a tu lado es una bendición. ¡Toca la imagen para ver tu sorpresa! 🎁💌
+                    </div>
+                    <div class="ig-post-comments">Ver los infinitos comentarios</div>
+                    <div class="ig-post-date">HACE UN MOMENTO</div>
+                </article>
+
                 <!-- Post 5: 2 Años (MARZO 2026) -->
                 <article class="ig-post">
                     <div class="ig-post-header">
@@ -481,6 +557,73 @@
 
         <audio id="audio-player"></audio>
 
+    </div>
+
+    <!-- Canvas de Lluvia de Pétalos y Corazones -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Reproductor de Música Premium (Spotify/Mini-Player Style) -->
+    <div id="music-player-widget" class="minimized">
+        <!-- Barra en miniatura -->
+        <div class="music-mini-bar" id="music-mini-bar">
+            <div class="music-disc-container">
+                <div class="music-disc" id="mini-music-disc">🎵</div>
+            </div>
+            <div class="music-mini-info">
+                <span class="music-mini-title" id="mini-song-title">Te Amo y Más</span>
+                <span class="music-mini-artist" id="mini-song-artist">Diego Luna</span>
+            </div>
+            <div class="music-mini-controls">
+                <button class="music-btn" id="mini-play-btn">
+                    <!-- Icono de Play -->
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" id="mini-play-icon"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <button class="music-btn" id="expand-player-btn">
+                    <!-- Icono Flecha Arriba -->
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Panel expandido -->
+        <div class="music-expanded-panel" id="music-expanded-panel">
+            <div class="player-header">
+                <h3>Nuestra Música 💖</h3>
+                <button class="music-btn" id="minimize-player-btn">
+                    <!-- Icono Flecha Abajo -->
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+            </div>
+            <div class="player-body">
+                <div class="vinyl-wrapper">
+                    <div class="vinyl-disc" id="vinyl-disc">
+                        <div class="vinyl-center">❤️</div>
+                    </div>
+                </div>
+                <div class="song-metadata">
+                    <h4 id="player-song-title">Te Amo y Más</h4>
+                    <p id="player-song-artist">Diego Luna</p>
+                </div>
+                <div class="player-controls">
+                    <button class="music-btn secondary" id="prev-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+                    <button class="music-btn main" id="player-play-btn">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" id="play-svg"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <button class="music-btn secondary" id="next-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6h2v12h-2z"/></svg>
+                    </button>
+                </div>
+                
+                <div class="playlist-container">
+                    <div class="playlist-header">Mi lista para ti</div>
+                    <ul class="playlist-list" id="playlist-list">
+                        <!-- Generado dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Script se ejecuta al final -->

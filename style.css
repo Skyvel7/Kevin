@@ -498,3 +498,623 @@ body {
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
+
+/* --- ESTILOS ADICIONALES: ANIVERSARIO 2 AÑOS Y 2 MESES --- */
+
+/* Gradiente Especial para el Post 6 */
+.gradient-6 {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 50%, #e83e8c 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 6s ease infinite;
+}
+
+/* Partículas Canvas */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    display: block;
+}
+
+/* 1. Contador de Amor (Love Counter) */
+.love-counter-container {
+    margin: 15px 15px 10px;
+    padding: 18px 15px;
+    background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 182, 193, 0.4);
+    box-shadow: 0 8px 24px rgba(214, 51, 108, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.love-counter-container:hover {
+    transform: translateY(-2px);
+}
+
+.love-counter-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #d6336c;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.love-counter-timer {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.timer-segment {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 8px 4px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255, 182, 193, 0.15);
+}
+
+.timer-num {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e83e8c;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timer-label {
+    font-size: 0.65rem;
+    color: #8e8e8e;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+/* 2. Reproductor de Música Premium (Flotante) */
+#music-player-widget {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    z-index: 1500;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Estado Minimizado */
+#music-player-widget.minimized {
+    height: 70px;
+}
+
+#music-player-widget.minimized #music-expanded-panel {
+    display: none;
+}
+
+/* Estado Expandido */
+#music-player-widget.expanded {
+    height: 480px;
+    bottom: 20px;
+}
+
+#music-player-widget.expanded .music-mini-bar {
+    display: none;
+}
+
+/* Estilos de la barra Mini */
+.music-mini-bar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.music-disc-container {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.music-disc {
+    font-size: 1.2rem;
+    animation: rotateDisc 4s linear infinite paused;
+}
+
+.music-player-widget-playing .music-disc,
+.music-player-widget-playing .vinyl-disc {
+    animation-play-state: running !important;
+}
+
+@keyframes rotateDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.music-mini-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-mini-title {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #262626;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.music-mini-artist {
+    font-size: 0.75rem;
+    color: #8e8e8e;
+}
+
+.music-mini-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    color: #262626;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.music-btn:active {
+    transform: scale(0.95);
+}
+
+.music-btn.main {
+    background: #e83e8c;
+    color: #ffffff;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(232, 62, 140, 0.3);
+}
+
+.music-btn.main:hover {
+    background: #d6336c;
+}
+
+/* Estilos Panel Expandido */
+.music-expanded-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.player-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #d6336c;
+}
+
+.player-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.vinyl-wrapper {
+    margin: 10px 0;
+    position: relative;
+}
+
+.vinyl-disc {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #3a3a3a 0%, #1a1a1a 70%, #0d0d0d 100%);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #282828;
+    animation: rotateDisc 8s linear infinite paused;
+}
+
+.vinyl-center {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border: 2px solid #e83e8c;
+}
+
+.song-metadata {
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.song-metadata h4 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #262626;
+}
+
+.song-metadata p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #8e8e8e;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 15px 0;
+}
+
+.playlist-container {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.playlist-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #8e8e8e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 4px;
+}
+
+.playlist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 3px;
+}
+
+.playlist-item:hover {
+    background-color: rgba(232, 62, 140, 0.05);
+}
+
+.playlist-item.active {
+    background-color: rgba(232, 62, 140, 0.08);
+    color: #e83e8c;
+    font-weight: 600;
+}
+
+.playlist-item .song-duration {
+    color: #8e8e8e;
+}
+
+.playlist-item.active .song-duration {
+    color: #e83e8c;
+}
+
+/* 3. Estilos Específicos de la Carta de 2 Años y 2 Meses */
+.carta-2-anos-2-meses {
+    background: #fffbfb;
+    background-image: radial-gradient(rgba(255, 182, 193, 0.2) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+.typewriter-container {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    text-align: justify;
+    min-height: 150px;
+}
+
+.typewriter-container p {
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: #e83e8c;
+    margin-left: 2px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Estilos de las Secciones de la Carta */
+.seccion-titulo {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #d6336c;
+    font-size: 1.3rem;
+    margin: 35px 0 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.seccion-instruccion {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8e8e8e;
+    margin-bottom: 15px;
+}
+
+/* El Raspadito (Scratch Card) */
+.scratch-card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.scratch-container {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+#scratch-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.scratch-coupon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(135deg, #fff0f3 0%, #ffe3e8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.coupon-border {
+    border: 2px dashed #e83e8c;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+.coupon-header {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #e83e8c;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.coupon-body {
+    text-align: center;
+}
+
+.coupon-body h4 {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #8e8e8e;
+    text-transform: uppercase;
+}
+
+.coupon-prize {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #d6336c;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.coupon-footnote {
+    font-size: 0.65rem;
+    color: #8e8e8e;
+    margin: 0;
+}
+
+/* 10 Cosas que Amo de Ti (Interactive Stack Card) */
+.love-cards-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.love-card-wrapper {
+    perspective: 1000px;
+    width: 280px;
+    height: 180px;
+    margin: 10px 0;
+}
+
+.love-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e83e8c 0%, #ff758c 100%);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(232, 62, 140, 0.25);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.love-card:active {
+    transform: scale(0.97) rotateY(5deg);
+}
+
+/* Animación al cambiar de tarjeta */
+.love-card.flip-anim {
+    animation: cardChangeEffect 0.5s ease-in-out;
+}
+
+@keyframes cardChangeEffect {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(0.85) rotate(-15deg) translateY(-20px); opacity: 0.5; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.card-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    margin: 10px 0;
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.12); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.12); }
+    70% { transform: scale(1); }
+}
+
+.card-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-hint {
+    font-size: 0.68rem;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Ajustes Responsive para el Reproductor en pantallas pequeñas */
+@media (max-width: 400px) {
+    .love-counter-timer {
+        gap: 3px;
+    }
+    .timer-num {
+        font-size: 1.1rem;
+    }
+    .timer-label {
+        font-size: 0.58rem;
+    }
+    #music-player-widget {
+        bottom: 10px;
+        width: calc(100% - 20px);
+    }
+    #music-player-widget.expanded {
+        height: 440px;
+    }
+}
